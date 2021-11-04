@@ -27,7 +27,11 @@ d["span"] = 3
 d_val_key = zip(d.values(),d.keys()) # 以元组的形式组合起来,让val在前面作为排序的依据
 # print(max(d_val_key))
 
-# 直接指定键值,对进行排序,最后以key的形式进行返回
+"""
+字典排序问题:
+    法一:用lambda表达式直接对字典内指定值,对进行排序,最后以key的形式进行返回
+    法二:使用itemgetter()对象来进行排序,该方法的速度更快
+"""
 x = sorted(d,key=lambda k: d[k],reverse=True)
 # print(x)
 
@@ -44,6 +48,6 @@ b= {
 }
 
 # 转化成keys类型后
-print(a.keys() & b.keys()) # 两个dict_keys类型的 &操作返回的是交集
+# print(a.keys() & b.keys()) # 拿到两个字典中一样的key
 # 转化成items类型后
-print(a.items() & b.items()) # 两个一模一样的item
+# print(a.items() & b.items()) # 拿到两个字典中两个一模一样的item
