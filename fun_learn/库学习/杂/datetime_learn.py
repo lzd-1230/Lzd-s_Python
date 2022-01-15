@@ -3,10 +3,12 @@ import time
 # 可以进行任意时间维度的平移:比如查看三天前创建的所有时间!
 # print(datetime.datetime.now() + datetime.timedelta(days=-3))
 
-# 结构化时间(时间戳和字符串相互转换的中间变量)
+# 结构化时间:时间戳和字符串相互转换的中间变量
 struct_time = time.localtime()
+# 将结构化的时间->时间戳
 time_stamp = time.mktime(struct_time)
-print(time_stamp) # 将结构化的时间->时间戳
+print(time_stamp)  
+# 将结构化时间转换成字符串
 time_str = time.strftime("%X",struct_time)
 print(time_str)
 

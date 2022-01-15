@@ -25,6 +25,7 @@ class PriorityQueue():
         self._index += 1
     def pop(self):
         return heapq.heappop(self._queue)[-1] 
+
 que = PriorityQueue()
 que.push("foo",1)
 que.push("bar",5) # 优先级最高

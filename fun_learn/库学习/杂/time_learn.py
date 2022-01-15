@@ -8,6 +8,3 @@ print(time.strftime("%X")) # 显示时分秒
 
 # 3.结构化时间 作用:方便获取当前时间的某一个部分,比如分钟,年,月等
 res = time.localtime()
-print() 
-
-# 

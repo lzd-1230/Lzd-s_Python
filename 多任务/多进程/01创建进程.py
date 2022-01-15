@@ -34,6 +34,7 @@ class MyProcess(Process):
         print("over")
 
 if __name__ == "__main__":
+	for i
     p = MyProcess("lzd")
     p.start()
     print("主进程")

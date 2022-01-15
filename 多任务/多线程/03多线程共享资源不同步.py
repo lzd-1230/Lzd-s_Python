@@ -9,6 +9,7 @@
 """
 import threading
 import time
+
 class TicketDB():
     def __init__(self):
         self._ticket_num = 5

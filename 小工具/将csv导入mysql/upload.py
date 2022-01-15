@@ -2,6 +2,7 @@
 本脚本实现通过命令行来上传.csv文件至mysql中
     但是目前对于大的csv无能为力
     且mysql的端口和ip也是写死了的
+    同时还有个问题:建表时要注意空值的处理
 """
 import pandas as pd
 import re
