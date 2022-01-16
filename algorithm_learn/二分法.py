@@ -6,23 +6,20 @@
 2.查找无序数组中局部极小值()
 """
 # 1.
-test = [1,2,2,3,4]
-def find_leftmin_idx(arr,n):
-    L,R = 0,len(arr)-1
+test = [1,1,2,2,2,2,3,4]
+def find_leftmin_idx(arr,n):  
+    L,R = 0,len(arr)-1 # 这里统一规范R为右侧下标
     i=0
-    if(len(arr) < 2):
-        return None
 
-    while(L < R):           # 列表中至少还有两个数
-
+    while(L < R):  # 列表中至少还有两个数的写法
         mid = int(L + ((R-L) >> 1))
         if(arr[mid] >= n):
-            R = mid - 1 
+            R = mid-1
         elif(arr[mid] < n):
-            L = mid + 1 
+            L = mid 
         i+=1
         print(f"第{i}轮 L={L} R={R} m={mid}")
-    return L
+    return L # 最后肯定返回左边的
 
 # 2.
 test = [10,1,2,3,4,2,5,3,10]
@@ -47,7 +44,7 @@ def find_minpoint_inx(arr):
     return L
 
 if __name__ == "__main__":
-    # print(f"结果下标:{find_leftmin_idx(test,2)}") # 1
+    print(f"结果下标:{find_leftmin_idx(test,2)}") # 1
     # print(f"结果{find_minpoint_inx(test)}")
 
 
