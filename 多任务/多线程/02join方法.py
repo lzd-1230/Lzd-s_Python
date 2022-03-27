@@ -15,6 +15,7 @@ print("主线程开始")
 t1 = threading.Thread(target=thread_body,args = ("Thread A",),name="Thread A")
 t1.start()
 t2 = threading.Thread(target=thread_body,args=("Thread B",),name="Thread B")
+time.sleep(1)
 t2.start()
 # 主线程等待 t1 运行完毕
 t1.join()

@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"app":"redrock-house"},"name":"redrock-house","namespace":"fe-prod"},"spec":{"ports":[{"name":"http","port":8080}],"selector":{"app":"redrock-house"}}}
+  creationTimestamp: "2022-02-28T12:07:29Z"
+  labels:
+    app: redrock-house
+  name: redrock-house
+  namespace: fe-prod
+  resourceVersion: "36672742"
+  uid: a24870d4-a94e-4f55-b734-ab2a3e8900b4
+spec:
+  clusterIP: 10.105.193.79
+  clusterIPs:
+  - 10.105.193.79
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - name: http
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: redrock-house
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}

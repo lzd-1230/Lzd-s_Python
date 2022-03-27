@@ -71,7 +71,7 @@ LOGGING_DIC = {
             "handlers": ["file"],
             "level": "WARNING",
             "propagate": False,
-        }
+        },
         # 默认日志，大多时候直接调用时起名字即可
         "":{
             "handlers": ["file"],

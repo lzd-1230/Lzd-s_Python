@@ -7,7 +7,6 @@ def onethread_mode():
     for url in utils.urls:
         utils.spider(url)
 
-
 def multi_mode():
     threads = []
     for url in utils.urls:

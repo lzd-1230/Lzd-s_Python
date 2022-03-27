@@ -3,10 +3,8 @@ python多线程的特点:
     python解释器自带了GIL全局锁,也即在任意时刻仅允许执行一个线程
     因此在计算密集型的任务中,我们还是希望使用多个CPU核心,而不是多线程(?????)
     在编程的时候要注意给每一个线程执行的机会(灵活使用sleep方法)
-
 本代码讨论如何构造一个实用性最普遍的线程类,其独立于python中任何一种并发机制
 """
-
 import time
 from threading import Thread
 
@@ -25,16 +23,9 @@ class mytask():
             n -= 1
             time.sleep(1)
 
-# c = mytask()
-# t = Thread(target=c.run,args=(10,))
-# t.start()
-# c.terminate() # 给我们的线程发送停止信号
-# t.join() # 当线程真正停止了后才会执行完毕
-
-import multiprocessing 
 c = mytask()
-p = multiprocessing.Process(target=c.run,args=(10,))
+p = Thread(target=c.run,args=(10,))
 p.start()
 time.sleep(3)
-c.terminate()  # 为啥这里的terminate不起作用??????
-p.join()
+c.terminate()  
+time.sleep(2)  # 子线程会在主线程结束后才会停止

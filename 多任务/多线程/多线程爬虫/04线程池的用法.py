@@ -11,6 +11,7 @@ with ThreadPoolExecutor() as pool:
     for url,html in results:
         print(url, len(html))
 
+
 print("sumbmit 的方式")
 # 模板二:
 with ThreadPoolExecutor() as pool:

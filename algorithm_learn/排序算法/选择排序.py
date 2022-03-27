@@ -1,8 +1,10 @@
 """
+不稳定排序
+    为什么选择排序是不稳定的?
+    答:因为每次交换的对象是非稳定的第一位
+       也就是非稳定区的相对顺序可能会被打乱
+
 算法原理:
-    从头开始向后遍历(下标i),找到最小的数
-    然后把最小的数和i位置交换,保证从开头开始到i是已经排好了的
-    直到遍历到结尾
 """
 test = [1,5,2,3,4]
 
@@ -17,8 +19,10 @@ def swap(arr,i,j):
 def select_sort(arr):
     if(len(arr) < 2):
         return
+    # 待排序区的开头
     for i in range(len(arr)):
         min_idx = i
+        # 遍历待排序区的所有元素找最小值
         for j in range(i,len(arr)):
             if(arr[j] < arr[min_idx]):
                 min_idx = j
